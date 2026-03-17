@@ -25,8 +25,8 @@ export default async function DashboardPage() {
     return (
       <div>
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-800">📊 Dashboard</h1>
-          <p className="text-slate-500 mt-1">@jayanta411 · World-class developer curriculum · 2026</p>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">Progress Command Center</h1>
+          <p className="text-slate-600 mt-2">@jayanta411 · World-class developer curriculum · 2026</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-8">
           <StatCard title="Overall Progress" value={`${rd.completionPercent}%`} subtitle={`${rd.completedTasks}/${rd.totalTasks} tasks`} icon="📈" color="green"/>
@@ -34,8 +34,8 @@ export default async function DashboardPage() {
           <StatCard title="Current Week" value={cw?.title??'—'} subtitle={cw?.dateRange??''} icon="📅" color="yellow"/>
           <StatCard title="Weeks Complete" value={doneWeeks} subtitle={`of ${rd.weeks.length} weeks`} icon="✅" color="purple"/>
         </div>
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-8">
-          <h2 className="text-lg font-bold text-slate-800 mb-5">📈 Curriculum Progress</h2>
+        <div className="panel p-6 mb-8">
+          <h2 className="text-lg font-bold text-slate-900 mb-5">Curriculum Progress</h2>
           <ProgressBar value={rd.completionPercent} label="All phases" sublabel={`${rd.completedTasks}/${rd.totalTasks}`} size="lg"/>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {[1,2,3,4].map(p=>(
@@ -45,8 +45,8 @@ export default async function DashboardPage() {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-            <h2 className="text-lg font-bold text-slate-800 mb-3">📅 This Week</h2>
+          <div className="panel p-6">
+            <h2 className="text-lg font-bold text-slate-900 mb-3">This Week</h2>
             {cw ? (
               <>
                 <p className="text-sm text-slate-500">{cw.dateRange}</p>
@@ -55,8 +55,8 @@ export default async function DashboardPage() {
               </>
             ) : <p className="text-slate-400">No active week.</p>}
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-            <h2 className="text-lg font-bold text-slate-800 mb-4">🎯 Pending Tasks</h2>
+          <div className="panel p-6">
+            <h2 className="text-lg font-bold text-slate-900 mb-4">Pending Tasks</h2>
             {pending.length===0
               ? <div className="text-center py-6"><div className="text-4xl mb-2">🎉</div><p className="text-green-600 font-semibold">All done this week!</p></div>
               : <ul className="space-y-0.5">{pending.map((t,i)=><ChecklistItem key={i} text={t.text} completed={false}/>)}</ul>
@@ -64,7 +64,7 @@ export default async function DashboardPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-lg font-bold text-slate-800 mb-4">🗓️ Recent Weeks</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-4">Recent Weeks</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {rd.weeks.slice(0,6).map(w=>(
               <WeekCard key={w.id} title={w.title} dateRange={w.dateRange} theme={w.theme}
@@ -73,7 +73,7 @@ export default async function DashboardPage() {
             ))}
           </div>
         </div>
-        <p className="text-xs text-slate-400 mt-10 text-center">🔄 Auto-refreshes every 60s · Edit notes/roadmap.md checkboxes → push → see live updates</p>
+        <p className="text-xs text-slate-500 mt-10 text-center">Auto-refreshes every 60s. Edit notes checkboxes, push, and watch updates roll in.</p>
       </div>
     );
   } catch (err) {
