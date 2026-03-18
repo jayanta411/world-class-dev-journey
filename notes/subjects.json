@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-18T22:47:52.114Z"
+    "updatedAt": "2026-03-18T22:51:02.400Z"
   },
   "phases": [
     {
@@ -94,6 +94,12 @@
             {
               "id": "t8",
               "text": "(Optional) Set up GitHub MCP — link repo to this Copilot Space",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t276",
+              "text": "Create a tracker app for tracking the progress",
               "completed": false,
               "indent": 0
             }
