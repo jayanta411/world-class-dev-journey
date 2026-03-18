@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import AuthButton from './AuthButton';
 
 const nav = [
   { href: '/',         label: 'Dashboard',   icon: '📊' },
@@ -38,6 +39,9 @@ export default function Sidebar() {
       </nav>
 
       <div className="hidden lg:flex flex-col gap-1 mt-auto pt-5 border-t border-slate-800 px-6 pb-6">
+        <div className="mb-4">
+          <AuthButton />
+        </div>
         <p className="text-xs text-slate-600">Auto-refreshes every 60s</p>
         <a href="https://github.com/jayanta411/world-class-dev-journey"
           target="_blank" rel="noopener noreferrer"

@@ -1,0 +1,2148 @@
+{
+  "meta": {
+    "title": "World-Class Developer Roadmap",
+    "owner": "jayanta411",
+    "startDate": "2026-03-17",
+    "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
+    "updatedAt": "2026-03-18T20:11:52.034Z"
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "number": 1,
+      "name": "Core Sharpening",
+      "weeksLabel": "1–4",
+      "color": "blue"
+    },
+    {
+      "id": "phase-2",
+      "number": 2,
+      "name": "Full-Stack + System Design",
+      "weeksLabel": "5–8",
+      "color": "green"
+    },
+    {
+      "id": "phase-3",
+      "number": 3,
+      "name": "AI/ML Deep Dive",
+      "weeksLabel": "9–16",
+      "color": "purple"
+    },
+    {
+      "id": "phase-4",
+      "number": 4,
+      "name": "Data Engineering + Production",
+      "weeksLabel": "17–24",
+      "color": "orange"
+    }
+  ],
+  "weeks": [
+    {
+      "id": "week-1",
+      "number": 1,
+      "phase": 1,
+      "dateRange": "2026-03-17 → 2026-03-22",
+      "theme": "Set up structure, Advanced JS, React performance basics, Python+Pandas intro, SQL basics, start DSA.",
+      "tracks": [
+        {
+          "id": "week-1-repo-setup",
+          "emoji": "📦",
+          "name": "Repo Setup",
+          "tasks": [
+            {
+              "id": "t1",
+              "text": "Create repo: `world-class-dev-journey`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t2",
+              "text": "Create folder structure:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t3",
+              "text": "Create this file: `notes/roadmap.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t4",
+              "text": "Create `notes/weekly_log.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t5",
+              "text": "Create `notes/dsa.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t6",
+              "text": "Create `notes/system_design.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t7",
+              "text": "Create `notes/sql.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t8",
+              "text": "(Optional) Set up GitHub MCP — link repo to this Copilot Space",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-1-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t9",
+              "text": "Review React reconciliation + Fiber architecture (read, take notes)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t10",
+              "text": "Build `frontend/react-playground/` app:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t11",
+              "text": "List component with expensive render simulation",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t12",
+              "text": "Button to add items",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t13",
+              "text": "Optimize with `React.memo`, `useCallback`, `useMemo`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t14",
+              "text": "Add code-split heavy component using dynamic `import()`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t15",
+              "text": "Write 2 tests (React Testing Library + Vitest/Jest):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t16",
+              "text": "Component renders correctly",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t17",
+              "text": "Button click updates state",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-1-advanced-javascript",
+          "emoji": "🟨",
+          "name": "Advanced JavaScript",
+          "tasks": [
+            {
+              "id": "t18",
+              "text": "Study & note: event loop, call stack, microtasks vs macrotasks",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t19",
+              "text": "Study & note: closures, lexical scope, `this`, prototypal inheritance",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t20",
+              "text": "Implement:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t21",
+              "text": "A closure-based private counter",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t22",
+              "text": "A basic `myBind` or `myCall` implementation",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-1-full-stack-backend",
+          "emoji": "🖥",
+          "name": "️ Full-Stack / Backend",
+          "tasks": [
+            {
+              "id": "t23",
+              "text": "Choose stack: Node + Express **or** Python + FastAPI",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t24",
+              "text": "Create `backend/` skeleton:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t25",
+              "text": "`/health` endpoint → `{ status: \"ok\" }`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t26",
+              "text": "`/users` GET → return in-memory list",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t27",
+              "text": "`/users` POST → add user to in-memory list",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-1-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t28",
+              "text": "Create `ml/python_basics.py` or `.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t29",
+              "text": "Demonstrate list/dict comprehensions, generators, `*args`/`**kwargs`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t30",
+              "text": "Implement a `Dataset` class:",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t31",
+              "text": "Accepts CSV path",
+              "completed": false,
+              "indent": 4
+            },
+            {
+              "id": "t32",
+              "text": "Has `head(n)`, `describe()`, `to_numpy()`",
+              "completed": false,
+              "indent": 4
+            },
+            {
+              "id": "t33",
+              "text": "2–3 unit tests",
+              "completed": false,
+              "indent": 4
+            },
+            {
+              "id": "t34",
+              "text": "Create `ml/pandas_intro.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t35",
+              "text": "Load any CSV dataset",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t36",
+              "text": "`head()`, `info()`, `describe()`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t37",
+              "text": "Filter rows, group by + aggregate",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t38",
+              "text": "Handle missing values (`fillna`, `dropna`)",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-1-data-engineering-sql",
+          "emoji": "🗄",
+          "name": "️ Data Engineering / SQL",
+          "tasks": [
+            {
+              "id": "t39",
+              "text": "Create mock schema in `notes/sql.md`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t40",
+              "text": "Write queries:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t41",
+              "text": "Total orders per user",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t42",
+              "text": "Top 5 users by total amount",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t43",
+              "text": "Orders in the last 30 days",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-1-dsa",
+          "emoji": "🧮",
+          "name": "DSA",
+          "tasks": [
+            {
+              "id": "t44",
+              "text": "Solve 4–5 LeetCode easy problems (arrays/strings/hash maps)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t45",
+              "text": "Document each in `notes/dsa.md`:",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-1-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t46",
+              "text": "Create `notes/system_design.md`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t47",
+              "text": "Sketch a **URL Shortener**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t48",
+              "text": "Components (API, DB, cache)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t49",
+              "text": "DB schema",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t50",
+              "text": "Basic scaling ideas",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-2",
+      "number": 2,
+      "phase": 1,
+      "dateRange": "2026-03-23 → 2026-03-29",
+      "theme": "Next.js basics, Postgres integration, React forms, Pandas advanced, first ML model, SQL joins + window functions.",
+      "tracks": [
+        {
+          "id": "week-2-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t51",
+              "text": "Set up a **Next.js app** (App Router) in `frontend/nextjs-app/`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t52",
+              "text": "Create 3 pages: Home, About, Dashboard (with basic layout)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t53",
+              "text": "Add a dynamic route: `/users/[id]`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t54",
+              "text": "Build a form with client-side validation:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t55",
+              "text": "Required fields",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t56",
+              "text": "Email format check",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t57",
+              "text": "Error states shown inline",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-2-full-stack-backend",
+          "emoji": "🖥",
+          "name": "️ Full-Stack / Backend",
+          "tasks": [
+            {
+              "id": "t58",
+              "text": "Set up PostgreSQL (Docker or local)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t59",
+              "text": "Connect backend to Postgres:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t60",
+              "text": "Create `users` table",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t61",
+              "text": "Replace in-memory users with DB queries",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t62",
+              "text": "Add proper error handling middleware to backend",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t63",
+              "text": "Add basic request logging (morgan or custom middleware)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-2-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t64",
+              "text": "Pandas advanced in `ml/pandas_advanced.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t65",
+              "text": "`merge`, `concat`, `pivot_table`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t66",
+              "text": "Custom aggregation with `agg()`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t67",
+              "text": "Time-series basics: resample, rolling",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t68",
+              "text": "First scikit-learn model in `ml/first_model.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t69",
+              "text": "Load a dataset (e.g. California Housing or Titanic)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t70",
+              "text": "Train a `LinearRegression` or `LogisticRegression`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t71",
+              "text": "Evaluate: accuracy/MSE, train vs test split",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-2-data-engineering-sql",
+          "emoji": "🗄",
+          "name": "️ Data Engineering / SQL",
+          "tasks": [
+            {
+              "id": "t72",
+              "text": "Practice 8–10 SQL queries in `notes/sql.md`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t73",
+              "text": "INNER JOIN, LEFT JOIN",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t74",
+              "text": "Subqueries",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t75",
+              "text": "CTE (WITH clause)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t76",
+              "text": "`ROW_NUMBER()`, `RANK()` window functions",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-2-dsa-pattern-arrays-hash-maps-start-two-pointers",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Arrays, Hash Maps → start Two Pointers)",
+          "tasks": [
+            {
+              "id": "t77",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t78",
+              "text": "Focus patterns: Hash Maps, Two Pointers intro",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t79",
+              "text": "Suggested problems:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t80",
+              "text": "Two Sum",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t81",
+              "text": "Valid Anagram",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t82",
+              "text": "Contains Duplicate",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t83",
+              "text": "Longest Substring Without Repeating Characters",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-2-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t84",
+              "text": "Sketch a **Social Feed System** (Twitter-lite) in `notes/system_design.md`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t85",
+              "text": "Feed generation (fan-out on write vs read)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t86",
+              "text": "DB schema",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t87",
+              "text": "Caching strategy",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-2-portfolio-personal-brand",
+          "emoji": "🌟",
+          "name": "Portfolio / Personal Brand",
+          "tasks": [
+            {
+              "id": "t88",
+              "text": "Add a `README.md` to your GitHub profile",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t89",
+              "text": "Write first `notes/til.md` entry (something you learned this week)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-3",
+      "number": 3,
+      "phase": 1,
+      "dateRange": "2026-03-30 → 2026-04-05",
+      "theme": "Auth, state management (Zustand/Redux Toolkit), REST API best practices, ML evaluation deep dive, SQL aggregation mastery.",
+      "tracks": [
+        {
+          "id": "week-3-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t90",
+              "text": "Add **Zustand** or **Redux Toolkit** to Next.js app for global state",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t91",
+              "text": "Implement auth flow (UI only):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t92",
+              "text": "Login form → token stored in state",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t93",
+              "text": "Protected route: redirect if not logged in",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t94",
+              "text": "Add **React Query** (or SWR) for data fetching from backend",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t95",
+              "text": "Write 3–5 more component tests",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-3-full-stack-backend",
+          "emoji": "🖥",
+          "name": "️ Full-Stack / Backend",
+          "tasks": [
+            {
+              "id": "t96",
+              "text": "Implement **JWT authentication**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t97",
+              "text": "POST `/auth/login` → returns JWT",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t98",
+              "text": "Middleware to protect routes",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t99",
+              "text": "Add `orders` table + CRUD endpoints",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t100",
+              "text": "Connect frontend auth to backend JWT",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t101",
+              "text": "Handle CORS properly",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-3-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t102",
+              "text": "ML evaluation deep dive in `ml/evaluation.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t103",
+              "text": "Confusion matrix, precision, recall, F1, ROC-AUC",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t104",
+              "text": "Overfitting vs underfitting (learning curves)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t105",
+              "text": "Cross-validation",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t106",
+              "text": "Try a second model: **Decision Tree** or **Random Forest** on same dataset",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t107",
+              "text": "Compare models: which performs better and why?",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-3-data-engineering-sql",
+          "emoji": "🗄",
+          "name": "️ Data Engineering / SQL",
+          "tasks": [
+            {
+              "id": "t108",
+              "text": "Advanced window functions:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t109",
+              "text": "`LAG()`, `LEAD()`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t110",
+              "text": "Running totals with `SUM() OVER()`",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t111",
+              "text": "`NTILE()` for percentile buckets",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t112",
+              "text": "Write a simple **ETL script** in `data-eng/etl_basic.py`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t113",
+              "text": "Extract: read CSV",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t114",
+              "text": "Transform: clean nulls, rename columns, type cast",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t115",
+              "text": "Load: insert into Postgres table",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-3-dsa-pattern-two-pointers-sliding-window",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Two Pointers, Sliding Window)",
+          "tasks": [
+            {
+              "id": "t116",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t117",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t118",
+              "text": "3Sum",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t119",
+              "text": "Remove Duplicates from Sorted Array",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t120",
+              "text": "Maximum Sum Subarray of Size K",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t121",
+              "text": "Minimum Window Substring",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-3-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t122",
+              "text": "Sketch a **Rate Limiter** design:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t123",
+              "text": "Token bucket vs sliding window",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t124",
+              "text": "Where it sits in architecture",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t125",
+              "text": "Redis usage",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-3-portfolio-personal-brand",
+          "emoji": "🌟",
+          "name": "Portfolio / Personal Brand",
+          "tasks": [
+            {
+              "id": "t126",
+              "text": "Push all Week 1–3 code to GitHub with meaningful commit messages",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t127",
+              "text": "Write TIL entry #2",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-4",
+      "number": 4,
+      "phase": 1,
+      "dateRange": "2026-04-06 → 2026-04-12",
+      "theme": "Phase 1 consolidation. Polish full-stack app v1. Deeper React patterns. Intro to deep learning. Data modeling basics.",
+      "tracks": [
+        {
+          "id": "week-4-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t128",
+              "text": "Implement **code splitting + lazy loading** across Next.js app",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t129",
+              "text": "Add **accessibility (a11y)** audit to at least 2 components:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t130",
+              "text": "ARIA labels, keyboard navigation, focus management",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t131",
+              "text": "Profile app with **React DevTools** Profiler:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t132",
+              "text": "Identify and fix 1–2 unnecessary re-renders",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t133",
+              "text": "Write an integration test (Cypress or Playwright):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t134",
+              "text": "Login flow end-to-end",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-4-full-stack-backend",
+          "emoji": "🖥",
+          "name": "️ Full-Stack / Backend",
+          "tasks": [
+            {
+              "id": "t135",
+              "text": "Add **pagination** to `/users` and `/orders` endpoints",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t136",
+              "text": "Add **filtering and sorting** query params",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t137",
+              "text": "Document API with **Swagger/OpenAPI** (or Postman collection)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t138",
+              "text": "Add basic health monitoring endpoint with uptime + DB status",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-4-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t139",
+              "text": "Intro to **deep learning** in `ml/deep_learning_intro.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t140",
+              "text": "What is a neural network (perceptron → layers)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t141",
+              "text": "Implement a simple 2-layer net with **PyTorch** or **Keras**:",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t142",
+              "text": "On MNIST or a binary classification dataset",
+              "completed": false,
+              "indent": 4
+            },
+            {
+              "id": "t143",
+              "text": "Train + evaluate (loss curve, accuracy)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t144",
+              "text": "Learn: activation functions, backpropagation concept (high level)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-4-data-engineering",
+          "emoji": "🗄",
+          "name": "️ Data Engineering",
+          "tasks": [
+            {
+              "id": "t145",
+              "text": "Data modeling basics in `data-eng/data_modeling.md`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t146",
+              "text": "Normalized vs denormalized",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t147",
+              "text": "Star schema: fact + dimension tables",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t148",
+              "text": "Design a simple star schema for an e-commerce scenario",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t149",
+              "text": "Set up **Apache Airflow** locally (Docker) or use **Prefect Cloud** (free tier):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t150",
+              "text": "Create your first DAG/flow: runs the ETL script from Week 3",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-4-dsa-pattern-sliding-window-start-trees",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Sliding Window + start Trees)",
+          "tasks": [
+            {
+              "id": "t151",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t152",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t153",
+              "text": "Longest Repeating Character Replacement",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t154",
+              "text": "Permutation in String",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t155",
+              "text": "Invert Binary Tree",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t156",
+              "text": "Maximum Depth of Binary Tree",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-4-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t157",
+              "text": "Sketch a **Caching Strategy** design:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t158",
+              "text": "Cache-aside vs write-through vs write-behind",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t159",
+              "text": "Redis as a cache layer for your app",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t160",
+              "text": "Cache invalidation strategies",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-4-portfolio-personal-brand",
+          "emoji": "🌟",
+          "name": "Portfolio / Personal Brand",
+          "tasks": [
+            {
+              "id": "t161",
+              "text": "**Phase 1 milestone**: make sure `world-class-dev-journey` repo has:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t162",
+              "text": "Clean README per folder",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t163",
+              "text": "At least 1 running full-stack app (even simple)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t164",
+              "text": "At least 10 DSA solutions with notes",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t165",
+              "text": "**Write first blog post / dev.to article** (e.g., \"React performance patterns I used this month\")",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-5",
+      "number": 5,
+      "phase": 2,
+      "dateRange": "2026-04-13 → 2026-04-19",
+      "theme": "Start full-stack capstone project. Redis caching. scikit-learn pipelines.",
+      "tracks": [
+        {
+          "id": "week-5-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t166",
+              "text": "Plan capstone app UI:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t167",
+              "text": "Wireframe 3–5 screens (pen/paper or Figma)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t168",
+              "text": "Define component tree",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t169",
+              "text": "Start building capstone frontend in `frontend/capstone/`",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t170",
+              "text": "Set up design tokens (colors, spacing, typography)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-5-full-stack-capstone",
+          "emoji": "🖥",
+          "name": "️ Full-Stack / Capstone",
+          "tasks": [
+            {
+              "id": "t171",
+              "text": "Define capstone app scope (examples: job tracker, expense tracker, AI-powered notes)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t172",
+              "text": "Set up `backend/capstone/` with proper folder structure:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t173",
+              "text": "Implement user auth end-to-end (register, login, JWT refresh)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t174",
+              "text": "Add **Redis** caching for a list endpoint",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-5-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t175",
+              "text": "**scikit-learn pipelines** in `ml/sklearn_pipeline.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t176",
+              "text": "`Pipeline` with preprocessor + model",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t177",
+              "text": "`ColumnTransformer` for mixed types",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t178",
+              "text": "`GridSearchCV` for hyperparameter tuning",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t179",
+              "text": "Train + evaluate pipeline on a real dataset",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-5-data-engineering",
+          "emoji": "🗄",
+          "name": "️ Data Engineering",
+          "tasks": [
+            {
+              "id": "t180",
+              "text": "Build a more complete ETL pipeline in `data-eng/etl_v2.py`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t181",
+              "text": "Source: a public API (e.g., weather, GitHub API)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t182",
+              "text": "Transform + validate",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t183",
+              "text": "Load into Postgres",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t184",
+              "text": "Schedule it with Airflow/Prefect DAG",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-5-dsa-pattern-trees-bfs-dfs",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Trees, BFS/DFS)",
+          "tasks": [
+            {
+              "id": "t185",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t186",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t187",
+              "text": "Level Order Traversal",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t188",
+              "text": "Validate BST",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t189",
+              "text": "Lowest Common Ancestor of BST",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t190",
+              "text": "Number of Islands",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-5-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t191",
+              "text": "Sketch **Notification System** design",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t192",
+              "text": "Study: message queues (concept: RabbitMQ/Kafka-style)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-6",
+      "number": 6,
+      "phase": 2,
+      "dateRange": "2026-04-20 → 2026-04-26",
+      "theme": "Capstone: full CRUD + file uploads. GraphQL intro. ML with neural nets.",
+      "tracks": [
+        {
+          "id": "week-6-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t193",
+              "text": "Build out capstone CRUD screens (create, list, detail, edit, delete)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t194",
+              "text": "Add loading states, error boundaries, empty states",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t195",
+              "text": "Implement optimistic UI updates on mutations",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-6-full-stack",
+          "emoji": "🖥",
+          "name": "️ Full-Stack",
+          "tasks": [
+            {
+              "id": "t196",
+              "text": "Add file upload endpoint (multer or FastAPI UploadFile)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t197",
+              "text": "Explore **GraphQL** basics:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t198",
+              "text": "Set up a simple GraphQL endpoint",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t199",
+              "text": "Query and mutation for one resource",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t200",
+              "text": "Add structured logging (winston/pino or Python logging)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-6-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t201",
+              "text": "Deep learning: CNNs in `ml/cnn_intro.ipynb`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t202",
+              "text": "Build a simple CNN on CIFAR-10 or MNIST",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t203",
+              "text": "Understand conv layers, pooling, flatten",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t204",
+              "text": "Learn: dropout, batch normalization (concept + code)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-6-data-engineering",
+          "emoji": "🗄",
+          "name": "️ Data Engineering",
+          "tasks": [
+            {
+              "id": "t205",
+              "text": "Study **data warehouse concepts**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t206",
+              "text": "OLTP vs OLAP",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t207",
+              "text": "BigQuery / Snowflake architecture (conceptual)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t208",
+              "text": "Partitioning and clustering",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t209",
+              "text": "Write notes in `data-eng/warehouse_concepts.md`",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-6-dsa-pattern-binary-search-heap",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Binary Search, Heap)",
+          "tasks": [
+            {
+              "id": "t210",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t211",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t212",
+              "text": "Binary Search",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t213",
+              "text": "Find Minimum in Rotated Sorted Array",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t214",
+              "text": "Kth Largest Element in Array",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t215",
+              "text": "Top K Frequent Elements",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-6-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t216",
+              "text": "Sketch **File Storage System** (like S3-lite):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t217",
+              "text": "Chunking, metadata DB, storage nodes",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-7",
+      "number": 7,
+      "phase": 2,
+      "dateRange": "2026-04-27 → 2026-05-03",
+      "theme": "Capstone deployment. Docker. ML model served via API.",
+      "tracks": [
+        {
+          "id": "week-7-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t218",
+              "text": "Polish capstone UI: responsive design, dark mode toggle",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t219",
+              "text": "Lighthouse audit: hit 90+ on performance, accessibility, best practices",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t220",
+              "text": "Add skeleton loaders and suspense boundaries",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-7-full-stack",
+          "emoji": "🖥",
+          "name": "️ Full-Stack",
+          "tasks": [
+            {
+              "id": "t221",
+              "text": "**Dockerize** frontend + backend:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t222",
+              "text": "`Dockerfile` for each",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t223",
+              "text": "`docker-compose.yml` to run full stack + Postgres + Redis",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t224",
+              "text": "Set up **GitHub Actions** CI:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t225",
+              "text": "Lint + test on PR",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t226",
+              "text": "Build Docker image on merge to main",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-7-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t227",
+              "text": "Train a model and **serve it via a REST API**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t228",
+              "text": "Save model (`joblib` or `torch.save`)",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t229",
+              "text": "Create a FastAPI endpoint: POST `/predict` → returns prediction",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t230",
+              "text": "Test from frontend with a simple form",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t231",
+              "text": "This is your first ML-powered full-stack feature! 🎉",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-7-data-engineering",
+          "emoji": "🗄",
+          "name": "️ Data Engineering",
+          "tasks": [
+            {
+              "id": "t232",
+              "text": "**Apache Spark basics** (even locally):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t233",
+              "text": "Install PySpark",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t234",
+              "text": "Read a CSV into a Spark DataFrame",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t235",
+              "text": "Filter, group by, aggregate",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t236",
+              "text": "Write notes in `data-eng/spark_basics.md`",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-7-dsa-pattern-linked-lists-stack-queue",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Linked Lists, Stack, Queue)",
+          "tasks": [
+            {
+              "id": "t237",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t238",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t239",
+              "text": "Reverse Linked List",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t240",
+              "text": "Merge Two Sorted Lists",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t241",
+              "text": "Valid Parentheses",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t242",
+              "text": "Min Stack",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-7-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t243",
+              "text": "Sketch **E-Commerce System** (products, orders, payments):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t244",
+              "text": "DB schema",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t245",
+              "text": "Payment flow",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t246",
+              "text": "Eventual consistency concepts",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-7-portfolio",
+          "emoji": "🌟",
+          "name": "Portfolio",
+          "tasks": [
+            {
+              "id": "t247",
+              "text": "Deploy capstone to a free host (Render, Railway, Vercel)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t248",
+              "text": "Write blog post #2: \"How I built and deployed a full-stack app in 4 weeks\"",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week-8",
+      "number": 8,
+      "phase": 2,
+      "dateRange": "2026-05-04 → 2026-05-10",
+      "theme": "Phase 2 consolidation + capstone polish + mock interview #1.",
+      "tracks": [
+        {
+          "id": "week-8-react-frontend",
+          "emoji": "⚛",
+          "name": "️ React / Frontend",
+          "tasks": [
+            {
+              "id": "t249",
+              "text": "Final capstone frontend polish",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t250",
+              "text": "Write comprehensive tests (aim for 70%+ component coverage)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t251",
+              "text": "Document component API in README",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-8-full-stack",
+          "emoji": "🖥",
+          "name": "️ Full-Stack",
+          "tasks": [
+            {
+              "id": "t252",
+              "text": "API documentation complete (Swagger or Postman)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t253",
+              "text": "Add rate limiting to API (express-rate-limit or FastAPI middleware)",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t254",
+              "text": "Basic monitoring: uptime + error rate endpoint",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-8-ai-ml",
+          "emoji": "🤖",
+          "name": "AI / ML",
+          "tasks": [
+            {
+              "id": "t255",
+              "text": "Intro to **NLP basics**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t256",
+              "text": "Tokenization, stopwords, TF-IDF",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t257",
+              "text": "Train a simple text classifier (spam/not spam) with scikit-learn",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t258",
+              "text": "Add a simple NLP feature to capstone (e.g., auto-tag notes)",
+              "completed": false,
+              "indent": 0
+            }
+          ]
+        },
+        {
+          "id": "week-8-data-engineering",
+          "emoji": "🗄",
+          "name": "️ Data Engineering",
+          "tasks": [
+            {
+              "id": "t259",
+              "text": "Build a **data pipeline project** in `data-eng/pipeline_v1/`:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t260",
+              "text": "Ingest from API → Spark transform → load to Postgres warehouse table",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t261",
+              "text": "Schedule with Airflow/Prefect",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t262",
+              "text": "Add a simple dbt-style transformation layer (or just SQL views)",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-8-dsa-pattern-backtracking-greedy",
+          "emoji": "🧮",
+          "name": "DSA (Pattern: Backtracking, Greedy)",
+          "tasks": [
+            {
+              "id": "t263",
+              "text": "Solve 5–7 problems",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t264",
+              "text": "Suggested:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t265",
+              "text": "Subsets",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t266",
+              "text": "Combination Sum",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t267",
+              "text": "Jump Game",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t268",
+              "text": "Meeting Rooms",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-8-system-design",
+          "emoji": "🏗",
+          "name": "️ System Design",
+          "tasks": [
+            {
+              "id": "t269",
+              "text": "**Mock system design interview** (time yourself 45 min):",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t270",
+              "text": "Design: \"Design YouTube\"",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t271",
+              "text": "Cover: storage, streaming, CDN, metadata DB, recommendations",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        },
+        {
+          "id": "week-8-interview-prep",
+          "emoji": "💼",
+          "name": "Interview Prep",
+          "tasks": [
+            {
+              "id": "t272",
+              "text": "**Mock coding interview #1**:",
+              "completed": false,
+              "indent": 0
+            },
+            {
+              "id": "t273",
+              "text": "Pick 3 medium LeetCode problems",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t274",
+              "text": "Solve each in 20 min max, explain out loud",
+              "completed": false,
+              "indent": 2
+            },
+            {
+              "id": "t275",
+              "text": "Review solutions, note gaps",
+              "completed": false,
+              "indent": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
