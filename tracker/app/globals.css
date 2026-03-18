@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #f5f7ff;
+  --bg-1: #e8f0ff;
+  --ink-1: #121a2a;
+  --ink-2: #42506a;
+  --line: #d8e2f4;
+  --brand: #0f766e;
+  --brand-2: #0ea5e9;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    color: var(--ink-1);
+    background:
+      radial-gradient(circle at 12% -5%, rgba(14, 165, 233, 0.18), transparent 40%),
+      radial-gradient(circle at 90% 0%, rgba(15, 118, 110, 0.14), transparent 34%),
+      linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 48%, #ffffff 100%);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-sm shadow-sm;
+  }
+
+  .phase-badge-1 { @apply bg-blue-100 text-blue-700; }
+  .phase-badge-2 { @apply bg-green-100 text-green-700; }
+  .phase-badge-3 { @apply bg-purple-100 text-purple-700; }
+  .phase-badge-4 { @apply bg-orange-100 text-orange-700; }
+}
+
+@layer utilities {
+  .fade-up {
+    animation: fadeUp 0.35s ease-out both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
