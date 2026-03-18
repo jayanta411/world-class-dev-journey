@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-18T22:22:11.844Z"
+    "updatedAt": "2026-03-18T22:47:52.114Z"
   },
   "phases": [
     {
@@ -64,7 +64,7 @@
             {
               "id": "t3",
               "text": "Create this file: `notes/roadmap.md`",
-              "completed": false,
+              "completed": true,
               "indent": 0
             },
             {
