@@ -1,12 +1,12 @@
 import { fetchFileContent } from '@/lib/github';
-import { parseRoadmap } from '@/lib/parseRoadmap';
+import { SubjectsData, computeStats } from '@/lib/subjects';
 import { parseDSA } from '@/lib/parseDSA';
 import StatCard from '@/components/StatCard';
 import ProgressBar from '@/components/ProgressBar';
 import WeekCard from '@/components/WeekCard';
 import ChecklistItem from '@/components/ChecklistItem';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 const phaseColors: {[k:number]:'blue'|'green'|'purple'|'orange'} = {1:'blue',2:'green',3:'purple',4:'orange'};
 const phaseNames: {[k:number]:string} = {1:'Phase 1: Core',2:'Phase 2: Full-Stack',3:'Phase 3: AI/ML',4:'Phase 4: Data Eng'};
@@ -17,18 +17,21 @@ const phaseBadge: {[k:number]:string} = {
 
 export default async function DashboardPage() {
   try {
-    const [roadmapMd, dsaMd] = await Promise.all([
-      fetchFileContent('notes/roadmap.md'),
+    const [subjectsRaw, dsaMd] = await Promise.all([
+      fetchFileContent('notes/subjects.json'),
       fetchFileContent('notes/dsa.md'),
     ]);
-    const rd = parseRoadmap(roadmapMd);
+    const subjectsData: SubjectsData = JSON.parse(subjectsRaw);
+    const rd = computeStats(subjectsData);
     const dsa = parseDSA(dsaMd);
     const cw = rd.currentWeek;
-    const pending = cw?.tracks.flatMap(t => t.tasks).filter(t => !t.completed).slice(0, 8) ?? [];
-    const doneWeeks = rd.weeks.filter(w => w.completedTasks > 0 && w.completedTasks === w.totalTasks).length;
+    const pending = cw
+      ? cw.tracks.flatMap(t => t.tasks).filter(t => !t.completed).slice(0, 8)
+      : [];
+    const doneWeeks = subjectsData.weeks.filter(w => rd.weekStats[w.id]?.completed > 0 && rd.weekStats[w.id]?.completed === rd.weekStats[w.id]?.total).length;
     const currentPhase = cw?.phase ?? 1;
 
-    const journeyStartStr = rd.weeks[0]?.dateRange?.split('→')[0]?.trim();
+    const journeyStartStr = subjectsData.weeks[0]?.dateRange?.split('→')[0]?.trim();
     const journeyStart = journeyStartStr ? new Date(journeyStartStr) : null;
     const daysElapsed = journeyStart
       ? Math.max(1, Math.floor((Date.now() - journeyStart.getTime()) / 86_400_000) + 1)
@@ -56,8 +59,8 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-8">
           <StatCard title="Overall Progress" value={`${rd.completionPercent}%`} subtitle={`${rd.completedTasks} / ${rd.totalTasks} tasks`} icon="📈" color="green"/>
           <StatCard title="DSA Problems" value={`${dsa.total} / 150`} subtitle={`${dsa.easy}E · ${dsa.medium}M · ${dsa.hard}H`} icon="🧮" color="blue"/>
-          <StatCard title="Current Week" value={cw?.title ?? '—'} subtitle={cw?.dateRange ?? ''} icon="📅" color="yellow"/>
-          <StatCard title="Weeks Complete" value={doneWeeks} subtitle={`of ${rd.weeks.length} weeks`} icon="✅" color="purple"/>
+          <StatCard title="Current Week" value={cw ? `Week ${cw.number}` : '—'} subtitle={cw?.dateRange ?? ''} icon="📅" color="yellow"/>
+          <StatCard title="Weeks Complete" value={doneWeeks} subtitle={`of ${subjectsData.weeks.length} weeks`} icon="✅" color="purple"/>
         </div>
 
         {/* Curriculum Progress */}
@@ -84,8 +87,8 @@ export default async function DashboardPage() {
               <>
                 <p className="text-sm text-slate-500">{cw.dateRange}</p>
                 {cw.theme && <p className="text-xs text-slate-400 mt-1 mb-4 italic">{cw.theme}</p>}
-                <ProgressBar value={cw.completionPercent} label="Week progress" sublabel={`${cw.completedTasks} / ${cw.totalTasks} tasks`}/>
-                {cw.completionPercent === 100 && (
+                <ProgressBar value={rd.weekStats[cw.id]?.percent ?? 0} label="Week progress" sublabel={`${rd.weekStats[cw.id]?.completed ?? 0} / ${rd.weekStats[cw.id]?.total ?? 0} tasks`}/>
+                {rd.weekStats[cw.id]?.percent === 100 && (
                   <p className="text-xs text-emerald-600 font-semibold mt-3">✓ Week complete — push on to next!</p>
                 )}
               </>
@@ -115,17 +118,20 @@ export default async function DashboardPage() {
         <div>
           <h2 className="text-lg font-bold text-slate-900 mb-4">Recent Weeks</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-            {rd.weeks.slice(0, 6).map(w => (
-              <WeekCard key={w.id} title={w.title} dateRange={w.dateRange} theme={w.theme}
-                phase={w.phase} completedTasks={w.completedTasks} totalTasks={w.totalTasks}
-                isCurrent={cw?.id === w.id} isComplete={w.completedTasks > 0 && w.completedTasks === w.totalTasks}
-              />
-            ))}
+            {subjectsData.weeks.slice(0, 6).map(w => {
+              const ws = rd.weekStats[w.id] ?? { completed: 0, total: 0, percent: 0 };
+              return (
+                <WeekCard key={w.id} title={`Week ${w.number}`} dateRange={w.dateRange} theme={w.theme}
+                  phase={w.phase} completedTasks={ws.completed} totalTasks={ws.total}
+                  isCurrent={cw?.id === w.id} isComplete={ws.completed > 0 && ws.completed === ws.total}
+                />
+              );
+            })}
           </div>
         </div>
 
         <p className="text-xs text-slate-400 mt-10 text-center">
-          Auto-refreshes every 60s · Edit notes checkboxes, push to GitHub, watch updates roll in.
+          Data source: <code className="bg-slate-100 px-1 rounded">notes/subjects.json</code> · Edit via Roadmap page or directly on GitHub
         </p>
       </div>
     );
