@@ -5,6 +5,8 @@ export interface SubjectTask {
   text: string;
   completed: boolean;
   indent: number;
+  lcLink?: string;
+  ncLink?: string;
 }
 
 export interface SubjectTrack {

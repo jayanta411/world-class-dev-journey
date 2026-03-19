@@ -236,6 +236,12 @@ function TaskRow({
       <span className={`text-sm leading-relaxed flex-1 ${task.completed ? 'line-through text-slate-400' : 'text-slate-700'}`}>
         {task.text}
       </span>
+      {(task.lcLink || task.ncLink) && (
+        <span className="flex gap-1 flex-shrink-0 ml-1">
+          {task.lcLink && <a href={task.lcLink} target="_blank" rel="noopener noreferrer" className="px-1.5 py-0.5 rounded text-xs font-semibold bg-orange-100 text-orange-700 hover:bg-orange-200">LC</a>}
+          {task.ncLink && <a href={task.ncLink} target="_blank" rel="noopener noreferrer" className="px-1.5 py-0.5 rounded text-xs font-semibold bg-green-100 text-green-700 hover:bg-green-200">NC</a>}
+        </span>
+      )}
       {isAuthed && (
         <IconBtn
           onClick={() => onDelete(weekId, trackId, task.id)}

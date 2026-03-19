@@ -353,61 +353,81 @@
               "id": "t300",
               "text": "Contains Duplicate · Pattern: Hash Set · Easy",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/contains-duplicate/",
+              "ncLink": "https://neetcode.io/problems/duplicate-integer"
             },
             {
               "id": "t301",
               "text": "Valid Anagram · Pattern: Char Freq Map · Easy",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/valid-anagram/",
+              "ncLink": "https://neetcode.io/problems/is-anagram"
             },
             {
               "id": "t302",
               "text": "Two Sum · Pattern: Complement Map · Easy",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/two-sum/",
+              "ncLink": "https://neetcode.io/problems/two-integer-sum"
             },
             {
               "id": "t303",
               "text": "Group Anagrams · Pattern: Hash Map · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/group-anagrams/",
+              "ncLink": "https://neetcode.io/problems/anagram-groups"
             },
             {
               "id": "t304",
               "text": "Top K Frequent Elements · Pattern: Bucket Sort · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/top-k-frequent-elements/",
+              "ncLink": "https://neetcode.io/problems/top-k-elements-in-list"
             },
             {
               "id": "t305",
               "text": "Product of Array Except Self · Pattern: Prefix/Suffix · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/product-of-array-except-self/",
+              "ncLink": "https://neetcode.io/problems/products-of-array-discluding-self"
             },
             {
               "id": "t306",
               "text": "Valid Sudoku · Pattern: Hash Set · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/valid-sudoku/",
+              "ncLink": "https://neetcode.io/problems/valid-sudoku"
             },
             {
               "id": "t307",
               "text": "Longest Consecutive Sequence · Pattern: Hash Set · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/longest-consecutive-sequence/",
+              "ncLink": "https://neetcode.io/problems/longest-consecutive-sequence"
             },
             {
               "id": "t308",
               "text": "Best Time to Buy and Sell Stock · Pattern: Sliding Min · Easy",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+              "ncLink": "https://neetcode.io/problems/buy-and-sell-crypto"
             },
             {
               "id": "t309",
               "text": "Encode and Decode Strings · Pattern: String Encoding · Medium",
               "completed": false,
-              "indent": 0
+              "indent": 0,
+              "lcLink": "https://leetcode.com/problems/encode-and-decode-strings/",
+              "ncLink": "https://neetcode.io/problems/string-encode-and-decode"
             }
           ]
         },

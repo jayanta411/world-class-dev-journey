@@ -47,6 +47,7 @@ export default async function DSAPage() {
                 <thead><tr className="border-b border-slate-100 text-left">
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-400 uppercase">#</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-400 uppercase">Problem</th>
+                  <th className="pb-3 pr-4 text-xs font-semibold text-slate-400 uppercase">Links</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-400 uppercase">Pattern</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-400 uppercase">Difficulty</th>
                   <th className="pb-3 text-xs font-semibold text-slate-400 uppercase">Date</th>
@@ -56,9 +57,13 @@ export default async function DSAPage() {
                     <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
                       <td className="py-2.5 pr-4 text-slate-400 font-mono text-xs">{p.number}</td>
                       <td className="py-2.5 pr-4">
-                        {p.link
-                          ? <a href={p.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">{p.problem}</a>
-                          : <span className="font-medium text-slate-700">{p.problem}</span>}
+                        <span className="font-medium text-slate-700">{p.problem}</span>
+                      </td>
+                      <td className="py-2.5 pr-4">
+                        <div className="flex gap-1.5">
+                          {p.link && <a href={p.link} target="_blank" rel="noopener noreferrer" className="px-1.5 py-0.5 rounded text-xs font-semibold bg-orange-100 text-orange-700 hover:bg-orange-200">LC</a>}
+                          {p.ncLink && <a href={p.ncLink} target="_blank" rel="noopener noreferrer" className="px-1.5 py-0.5 rounded text-xs font-semibold bg-green-100 text-green-700 hover:bg-green-200">NC</a>}
+                        </div>
                       </td>
                       <td className="py-2.5 pr-4 text-slate-500">{p.pattern}</td>
                       <td className="py-2.5 pr-4">
