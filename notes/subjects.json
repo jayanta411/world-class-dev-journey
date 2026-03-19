@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-19T20:19:12.451Z"
+    "updatedAt": "2026-03-19T21:18:41.316Z"
   },
   "phases": [
     {
@@ -168,7 +168,7 @@
             {
               "id": "t18",
               "text": "Study & note: event loop, call stack, microtasks vs macrotasks",
-              "completed": false,
+              "completed": true,
               "indent": 0
             },
             {
