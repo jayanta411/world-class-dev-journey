@@ -28,6 +28,12 @@ async function tryWriteLocal(pathInRepo: string, content: string): Promise<void>
 export async function fetchFileContent(filePath: string): Promise<string> {
   const normalizedPath = filePath.replace(/^\/+/, '');
 
+  // In development, prefer the local file so changes on any branch are reflected immediately.
+  if (process.env.NODE_ENV !== 'production') {
+    const local = await tryReadLocal(normalizedPath);
+    if (local !== null) return local;
+  }
+
   const encodedPath = normalizedPath
     .split('/')
     .map(p => encodeURIComponent(p))
