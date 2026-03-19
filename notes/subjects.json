@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-19T22:26:08.016Z"
+    "updatedAt": "2026-03-19T22:26:11.583Z"
   },
   "phases": [
     {
@@ -406,7 +406,7 @@
             {
               "id": "t309",
               "text": "✅ [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) · [NeetCode](https://neetcode.io/problems/string-encode-and-decode) · Pattern: String Encoding · Medium",
-              "completed": true,
+              "completed": false,
               "indent": 0
             }
           ]
