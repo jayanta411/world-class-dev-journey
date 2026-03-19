@@ -1,5 +1,5 @@
 export interface DSAProblem {
-  number: number; problem: string; link: string;
+  number: number; problem: string; link: string; ncLink: string;
   pattern: string; difficulty: 'Easy'|'Medium'|'Hard'|''; date: string; notes: string;
 }
 export interface DSAStats {
@@ -29,15 +29,18 @@ export function parseDSA(markdown: string): DSAStats {
     if (sepSeen && t.startsWith('|')) {
       const cols = t.split('|').map(c => c.trim()).slice(1);
       if (cols[cols.length-1]==='') cols.pop();
-      if (cols.length >= 4 && parseInt(cols[0]) > 0 && cols[1]) {
-        let problem = cols[1], link = cols[2]||'';
-        const lm = cols[1].match(/\[([^\]]+)\]\(([^)]+)\)/);
-        if (lm) { problem = lm[1]; link = lm[2]; }
-        const diff = cols[4] as DSAProblem['difficulty'];
+      if (cols.length >= 6 && parseInt(cols[0]) > 0 && cols[1]) {
+        const problem = cols[1];
+        // cols[2] = LeetCode link (markdown), cols[3] = NeetCode link
+        const lm = cols[2].match(/\[([^\]]+)\]\(([^)]+)\)/);
+        const link = lm ? lm[2] : (cols[2]||'');
+        const nm = cols[3]?.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        const ncLink = nm ? nm[2] : (cols[3]||'');
+        const diff = cols[5] as DSAProblem['difficulty'];
         problems.push({
-          number: parseInt(cols[0]), problem, link, pattern: cols[3]||'',
+          number: parseInt(cols[0]), problem, link, ncLink, pattern: cols[4]||'',
           difficulty: ['Easy','Medium','Hard'].includes(diff) ? diff : '',
-          date: cols[5]||'', notes: cols[7]||'',
+          date: cols[6]||'', notes: cols[9]||'',
         });
       }
     } else if (sepSeen && !t.startsWith('|') && t) {
