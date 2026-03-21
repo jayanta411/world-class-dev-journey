@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-19T22:27:02.047Z"
+    "updatedAt": "2026-03-21T04:25:37.954Z"
   },
   "phases": [
     {
@@ -352,7 +352,7 @@
             {
               "id": "t300",
               "text": "Contains Duplicate · Pattern: Hash Set · Easy",
-              "completed": false,
+              "completed": true,
               "indent": 0,
               "lcLink": "https://leetcode.com/problems/contains-duplicate/",
               "ncLink": "https://neetcode.io/problems/duplicate-integer"
