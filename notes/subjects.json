@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-21T05:08:08.722Z"
+    "updatedAt": "2026-03-24T09:06:00.329Z"
   },
   "phases": [
     {
@@ -368,7 +368,7 @@
             {
               "id": "t302",
               "text": "Two Sum · Pattern: Complement Map · Easy",
-              "completed": false,
+              "completed": true,
               "indent": 0,
               "lcLink": "https://leetcode.com/problems/two-sum/",
               "ncLink": "https://neetcode.io/problems/two-integer-sum"
