@@ -4,7 +4,7 @@
     "owner": "jayanta411",
     "startDate": "2026-03-17",
     "goal": "World-class React + Full-Stack engineer, AI/ML & Data Engineering proficiency, top-tier job ready",
-    "updatedAt": "2026-03-30T22:32:52.164Z"
+    "updatedAt": "2026-03-31T21:12:17.752Z"
   },
   "phases": [
     {
@@ -408,7 +408,7 @@
             {
               "id": "t307",
               "text": "Longest Consecutive Sequence · Pattern: Hash Set · Medium",
-              "completed": false,
+              "completed": true,
               "indent": 0,
               "lcLink": "https://leetcode.com/problems/longest-consecutive-sequence/",
               "ncLink": "https://neetcode.io/problems/longest-consecutive-sequence"
