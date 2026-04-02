@@ -12,14 +12,14 @@ export default function ProgressBar({ value, label, sublabel, color='green', sho
       {(label||showPercent) && (
         <div className="flex items-center justify-between mb-1.5">
           <div>
-            {label && <span className="text-sm font-medium text-slate-700">{label}</span>}
-            {sublabel && <span className="text-xs text-slate-400 ml-2">{sublabel}</span>}
+            {label && <span className="text-sm font-medium text-slate-200">{label}</span>}
+            {sublabel && <span className="text-xs text-slate-500 ml-2">{sublabel}</span>}
           </div>
-          {showPercent && <span className="text-sm font-semibold text-slate-600">{v}%</span>}
+          {showPercent && <span className="text-sm font-semibold text-slate-300">{v}%</span>}
         </div>
       )}
-      <div className={`w-full bg-slate-200 rounded-full ${S[size]} overflow-hidden`}>
-        <div className={`${C[color]} ${S[size]} rounded-full transition-all duration-700`} style={{width:`${v}%`}}/>
+      <div className={`w-full bg-slate-800/90 rounded-full ${S[size]} overflow-hidden`}>
+        <div className={`${C[color]} ${S[size]} rounded-full transition-all duration-700 shadow-[0_0_24px_rgba(14,165,233,0.22)]`} style={{width:`${v}%`}}/>
       </div>
     </div>
   );
