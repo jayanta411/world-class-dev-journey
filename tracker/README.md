@@ -26,3 +26,16 @@ npm install
 cp .env.example .env.local
 npm run dev
 ```
+
+## MCP Setup (Stitch)
+This workspace includes MCP configuration at `.vscode/mcp.json` with a `stitch` server.
+
+1. Open Command Palette (`Ctrl+Shift+P`) and run `MCP: Open Workspace Folder MCP Configuration`.
+2. Confirm the `stitch` server entry is present.
+3. Start the server via `MCP: List Servers` -> `stitch` -> `Start`.
+4. On first start, VS Code prompts for `stitchApiKey`.
+5. In Chat, open tool picker and verify `stitch` tools appear.
+
+The server URL is fixed to `https://stitch.googleapis.com/mcp`, and the request uses the `X-Goog-Api-Key` header.
+
+If you need to force VS Code to prompt for the API key again, rename the input id in `.vscode/mcp.json` and restart the `stitch` server.

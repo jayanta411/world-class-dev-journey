@@ -3,13 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --bg-0: #f5f7ff;
-  --bg-1: #e8f0ff;
-  --ink-1: #121a2a;
-  --ink-2: #42506a;
-  --line: #d8e2f4;
-  --brand: #0f766e;
-  --brand-2: #0ea5e9;
+  --bg: #0c1324;
+  --bg-elevated: #151b2d;
+  --surface: #191f31;
+  --surface-high: #23293c;
+  --surface-top: #2e3447;
+  --ink-1: #dce1fb;
+  --ink-2: #bec8d2;
+  --ink-3: #88929b;
+  --line: rgba(136, 146, 155, 0.15);
+  --brand: #89ceff;
+  --brand-strong: #0ea5e9;
+  --accent: #4edea3;
+  --warning: #d2c6a6;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 @layer base {
@@ -26,27 +33,45 @@
   body {
     min-height: 100vh;
     color: var(--ink-1);
+    font-family: var(--font-body), sans-serif;
     background:
-      radial-gradient(circle at 12% -5%, rgba(14, 165, 233, 0.18), transparent 40%),
-      radial-gradient(circle at 90% 0%, rgba(15, 118, 110, 0.14), transparent 34%),
-      linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 48%, #ffffff 100%);
+      radial-gradient(circle at 14% -4%, rgba(137, 206, 255, 0.16), transparent 34%),
+      radial-gradient(circle at 88% 2%, rgba(78, 222, 163, 0.12), transparent 26%),
+      linear-gradient(180deg, #0f172b 0%, var(--bg) 42%, #070d1f 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), sans-serif;
+    letter-spacing: -0.03em;
   }
 
   a {
     color: inherit;
     text-decoration: none;
   }
+
+  ::selection {
+    background: rgba(14, 165, 233, 0.3);
+  }
 }
 
 @layer components {
   .panel {
-    @apply rounded-2xl border border-slate-200/80 bg-white/90 backdrop-blur-sm shadow-sm;
+    background: linear-gradient(180deg, rgba(35, 41, 60, 0.96), rgba(21, 27, 45, 0.98));
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    @apply rounded-[28px] backdrop-blur-xl;
   }
 
-  .phase-badge-1 { @apply bg-blue-100 text-blue-700; }
-  .phase-badge-2 { @apply bg-green-100 text-green-700; }
-  .phase-badge-3 { @apply bg-purple-100 text-purple-700; }
-  .phase-badge-4 { @apply bg-orange-100 text-orange-700; }
+  .phase-badge-1 { @apply bg-sky-500/20 text-sky-200 border border-sky-400/20; }
+  .phase-badge-2 { @apply bg-emerald-500/20 text-emerald-200 border border-emerald-400/20; }
+  .phase-badge-3 { @apply bg-violet-500/20 text-violet-200 border border-violet-400/20; }
+  .phase-badge-4 { @apply bg-amber-500/20 text-amber-100 border border-amber-300/20; }
 }
 
 @layer utilities {
