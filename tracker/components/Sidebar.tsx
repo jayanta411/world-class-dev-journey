@@ -8,7 +8,7 @@ import { IconHome, IconMapPin, IconBrain, IconBook } from '@/lib/icons';
 interface NavItem {
   href: string;
   label: string;
-  icon: React.ComponentType<{ size?: string; color?: string; className?: string }>;
+  icon: typeof IconHome;
 }
 
 const nav: NavItem[] = [
