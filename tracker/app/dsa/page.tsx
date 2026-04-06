@@ -1,13 +1,13 @@
 import { fetchFileContent } from '@/lib/github';
-import { parseDSA, DSA_PATTERN_ORDER, DSA_PATTERN_TARGETS } from '@/lib/parseDSA';
+import { parseDSAJson, DSA_PATTERN_ORDER, DSA_PATTERN_TARGETS } from '@/lib/parseDSA';
 import StatCard from '@/components/StatCard';
 import ProgressBar from '@/components/ProgressBar';
 export const revalidate = 60;
 
 export default async function DSAPage() {
   try {
-    const md = await fetchFileContent('notes/dsa.md');
-    const dsa = parseDSA(md);
+    const raw = await fetchFileContent('notes/dsa.json');
+    const dsa = parseDSAJson(raw);
     return (
       <div>
         <div className="mb-8">
@@ -39,7 +39,7 @@ export default async function DSAPage() {
           {dsa.problems.length===0 ? (
             <div className="text-center py-12">
               <div className="text-4xl mb-3">🧮</div>
-              <p className="text-slate-400">No problems logged yet. Add to <code className="bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded text-xs">notes/dsa.md</code></p>
+              <p className="text-slate-400">No problems logged yet. Add to <code className="bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded text-xs">notes/dsa.json</code></p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -49,8 +49,9 @@ export default async function DSAPage() {
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Problem</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Links</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Pattern</th>
+                  <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Week</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Difficulty</th>
-                  <th className="pb-3 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Date</th>
+                  <th className="pb-3 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Completed</th>
                 </tr></thead>
                 <tbody>
                   {dsa.problems.map((p,i)=>(
@@ -67,6 +68,9 @@ export default async function DSAPage() {
                       </td>
                       <td className="py-2.5 pr-4 text-slate-400">{p.pattern}</td>
                       <td className="py-2.5 pr-4">
+                        {p.roadmapWeek != null && <span className="px-1.5 py-0.5 rounded text-xs font-medium bg-slate-700/60 text-slate-300 border border-slate-600/40">Wk {p.roadmapWeek}</span>}
+                      </td>
+                      <td className="py-2.5 pr-4">
                         {p.difficulty && <span className={`px-2 py-0.5 rounded text-xs font-semibold border ${p.difficulty==='Easy'?'bg-emerald-500/15 text-emerald-200 border-emerald-300/20':p.difficulty==='Medium'?'bg-amber-500/15 text-amber-100 border-amber-300/20':'bg-rose-500/15 text-rose-200 border-rose-300/20'}`}>{p.difficulty}</span>}
                       </td>
                       <td className="py-2.5 text-slate-500 text-xs">{p.date||'—'}</td>
@@ -76,6 +80,7 @@ export default async function DSAPage() {
               </table>
             </div>
           )}
+          <p className="text-xs text-slate-600 mt-4 text-right">Data source: <code className="bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded">notes/dsa.json</code></p>
         </div>
       </div>
     );
