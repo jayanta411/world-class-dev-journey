@@ -14,6 +14,23 @@ export const DSA_PATTERN_TARGETS: Record<string,number> = {
 };
 export const DSA_PATTERN_ORDER = Object.keys(DSA_PATTERN_TARGETS);
 
+export const PATTERN_NORMALIZE: Record<string, string> = {
+  // Arrays / Strings / Hash Maps group
+  'Hash Set':        'Arrays',
+  'Char Freq Map':   'Strings',
+  'Complement Map':  'Hash Maps',
+  'Hash Map':        'Hash Maps',
+  'Bucket Sort':     'Arrays',
+  'Prefix/Suffix':   'Arrays',
+  'Sliding Min':     'Arrays',
+  'String Encoding': 'Strings',
+  // Two Pointers / Sliding Window (already match)
+  'Two Pointers':    'Two Pointers',
+  'Sliding Window':  'Sliding Window',
+  // Greedy
+  'Greedy':          'Greedy',
+};
+
 export function parseDSA(markdown: string): DSAStats {
   const problems: DSAProblem[] = [];
   const lines = markdown.split('\n');
@@ -52,7 +69,8 @@ export function parseDSA(markdown: string): DSAStats {
   const byPattern: Record<string,number> = {};
   let easy=0, medium=0, hard=0;
   for (const p of valid) {
-    byPattern[p.pattern] = (byPattern[p.pattern]||0)+1;
+    const normalizedPattern = PATTERN_NORMALIZE[p.pattern] || p.pattern;
+    byPattern[normalizedPattern] = (byPattern[normalizedPattern]||0)+1;
     if (p.difficulty==='Easy') easy++;
     else if (p.difficulty==='Medium') medium++;
     else if (p.difficulty==='Hard') hard++;
