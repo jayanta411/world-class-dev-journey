@@ -6,6 +6,7 @@ tracker/node_modules/
 .next/
 dist/
 build/
+*.tsbuildinfo
 
 # Logs
 *.log
