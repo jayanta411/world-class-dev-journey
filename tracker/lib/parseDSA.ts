@@ -1,16 +1,22 @@
+import { SubjectsData } from '@/lib/subjects';
+
 export interface DSAProblem {
   number: number; problem: string; link: string; ncLink: string;
   pattern: string; difficulty: 'Easy'|'Medium'|'Hard'|''; date: string; notes: string;
+  completed?: boolean;
 }
 export interface DSAStats {
   problems: DSAProblem[]; total: number; easy: number; medium: number; hard: number;
   byPattern: Record<string,number>; targetTotal: number; completionPercent: number;
 }
 export const DSA_PATTERN_TARGETS: Record<string,number> = {
-  'Arrays':4,'Strings':4,'Hash Maps':4,'Two Pointers':6,'Sliding Window':6,
-  'Trees':5,'Recursion':4,'BFS/DFS':4,'Binary Search':5,'Heap':4,
-  'Linked Lists':4,'Stack':3,'Queue':3,'Backtracking':4,'Greedy':4,
-  'Dynamic Programming':18,'Graphs':10,'Tries':5,
+  'Hash Set':3,'Char Freq Map':2,'Complement Map':1,'Hash Map':3,'Bucket Sort':1,
+  'Prefix/Suffix':2,'Sliding Min':1,'String Encoding':1,
+  'Two Pointers':5,'Sliding Window':6,
+  'Stack':7,'Binary Search':7,'Linked List':11,
+  'Trees':15,'Tries':3,'Heap':7,'Backtracking':9,
+  'Graphs':13,'Advanced Graphs':6,
+  'Dynamic Programming':23,'Greedy':8,'Intervals':6,'Math & Geometry':8,'Bit Manipulation':7,
 };
 export const DSA_PATTERN_ORDER = Object.keys(DSA_PATTERN_TARGETS);
 
@@ -60,5 +66,47 @@ export function parseDSA(markdown: string): DSAStats {
   return {
     problems: valid, total: valid.length, easy, medium, hard, byPattern,
     targetTotal: 150, completionPercent: Math.round((valid.length/150)*100),
+  };
+}
+
+export function extractDSAFromSubjects(data: SubjectsData): DSAStats {
+  const problems: DSAProblem[] = [];
+  let idx = 0;
+
+  for (const week of data.weeks) {
+    for (const track of week.tracks) {
+      if (!track.id.endsWith('-dsa')) continue;
+      for (const task of track.tasks) {
+        const m = task.text.match(/^(.+?)\s+·\s+Pattern:\s+(.+?)(?:\s+·\s+(.+))?$/);
+        if (!m) continue;
+        const diff = m[3]?.trim() ?? '';
+        problems.push({
+          number: ++idx,
+          problem: m[1].trim(),
+          link: task.lcLink ?? '',
+          ncLink: task.ncLink ?? '',
+          pattern: m[2].trim(),
+          difficulty: (['Easy','Medium','Hard'].includes(diff) ? diff : '') as DSAProblem['difficulty'],
+          date: '',
+          notes: '',
+          completed: task.completed,
+        });
+      }
+    }
+  }
+
+  const completed = problems.filter(p => p.completed);
+  const byPattern: Record<string,number> = {};
+  let easy=0, medium=0, hard=0;
+  for (const p of completed) {
+    byPattern[p.pattern] = (byPattern[p.pattern]||0)+1;
+    if (p.difficulty==='Easy') easy++;
+    else if (p.difficulty==='Medium') medium++;
+    else if (p.difficulty==='Hard') hard++;
+  }
+  const total = completed.length;
+  return {
+    problems, total, easy, medium, hard, byPattern,
+    targetTotal: 150, completionPercent: Math.round((total/150)*100),
   };
 }

@@ -1,6 +1,6 @@
 import { fetchFileContent } from '@/lib/github';
 import { SubjectsData, computeStats } from '@/lib/subjects';
-import { parseDSA } from '@/lib/parseDSA';
+import { extractDSAFromSubjects } from '@/lib/parseDSA';
 import StatCard from '@/components/StatCard';
 import ProgressBar from '@/components/ProgressBar';
 import WeekCard from '@/components/WeekCard';
@@ -23,13 +23,10 @@ const phaseBadge: {[k:number]:string} = {
 
 export default async function DashboardPage() {
   try {
-    const [subjectsRaw, dsaMd] = await Promise.all([
-      fetchFileContent('notes/subjects.json'),
-      fetchFileContent('notes/dsa.md'),
-    ]);
+    const subjectsRaw = await fetchFileContent('notes/subjects.json');
     const subjectsData: SubjectsData = JSON.parse(subjectsRaw);
     const rd = computeStats(subjectsData);
-    const dsa = parseDSA(dsaMd);
+    const dsa = extractDSAFromSubjects(subjectsData);
     const cw = rd.currentWeek;
     const pending = cw
       ? cw.tracks.flatMap(t => t.tasks).filter(t => !t.completed).slice(0, 8)

@@ -1,13 +1,15 @@
 import { fetchFileContent } from '@/lib/github';
-import { parseDSA, DSA_PATTERN_ORDER, DSA_PATTERN_TARGETS } from '@/lib/parseDSA';
+import { extractDSAFromSubjects, DSA_PATTERN_ORDER, DSA_PATTERN_TARGETS } from '@/lib/parseDSA';
+import { SubjectsData } from '@/lib/subjects';
 import StatCard from '@/components/StatCard';
 import ProgressBar from '@/components/ProgressBar';
 export const revalidate = 60;
 
 export default async function DSAPage() {
   try {
-    const md = await fetchFileContent('notes/dsa.md');
-    const dsa = parseDSA(md);
+    const raw = await fetchFileContent('notes/subjects.json');
+    const subjectsData: SubjectsData = JSON.parse(raw);
+    const dsa = extractDSAFromSubjects(subjectsData);
     return (
       <div>
         <div className="mb-8">
@@ -35,17 +37,18 @@ export default async function DSAPage() {
           </div>
         </div>
         <div className="panel p-6">
-          <h2 className="text-lg font-bold text-slate-50 mb-4">📋 Problem Log <span className="text-sm font-normal text-slate-500">({dsa.total})</span></h2>
+          <h2 className="text-lg font-bold text-slate-50 mb-4">📋 Problem Log <span className="text-sm font-normal text-slate-500">({dsa.problems.length})</span></h2>
           {dsa.problems.length===0 ? (
             <div className="text-center py-12">
               <div className="text-4xl mb-3">🧮</div>
-              <p className="text-slate-400">No problems logged yet. Add to <code className="bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded text-xs">notes/dsa.md</code></p>
+              <p className="text-slate-400">No problems found. Add DSA tasks to the <code className="bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded text-xs">notes/subjects.json</code> via the Roadmap page.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead><tr className="border-b border-slate-800 text-left">
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">#</th>
+                  <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Status</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Problem</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Links</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Pattern</th>
@@ -54,8 +57,9 @@ export default async function DSAPage() {
                 </tr></thead>
                 <tbody>
                   {dsa.problems.map((p,i)=>(
-                    <tr key={i} className="border-b border-slate-900 hover:bg-slate-800/40">
+                    <tr key={i} className={`border-b border-slate-900 hover:bg-slate-800/40 ${!p.completed ? 'opacity-50' : ''}`}>
                       <td className="py-2.5 pr-4 text-slate-500 font-mono text-xs">{p.number}</td>
+                      <td className="py-2.5 pr-4 text-base">{p.completed ? '✅' : '⬜'}</td>
                       <td className="py-2.5 pr-4">
                         <span className="font-medium text-slate-100">{p.problem}</span>
                       </td>
