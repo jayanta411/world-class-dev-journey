@@ -50,7 +50,8 @@ export default async function DSAPage() {
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Links</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Pattern</th>
                   <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Difficulty</th>
-                  <th className="pb-3 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Date</th>
+                  <th className="pb-3 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Date</th>
+                  <th className="pb-3 text-xs font-semibold text-slate-500 uppercase tracking-[0.28em]">Notes</th>
                 </tr></thead>
                 <tbody>
                   {dsa.problems.map((p,i)=>(
@@ -69,7 +70,8 @@ export default async function DSAPage() {
                       <td className="py-2.5 pr-4">
                         {p.difficulty && <span className={`px-2 py-0.5 rounded text-xs font-semibold border ${p.difficulty==='Easy'?'bg-emerald-500/15 text-emerald-200 border-emerald-300/20':p.difficulty==='Medium'?'bg-amber-500/15 text-amber-100 border-amber-300/20':'bg-rose-500/15 text-rose-200 border-rose-300/20'}`}>{p.difficulty}</span>}
                       </td>
-                      <td className="py-2.5 text-slate-500 text-xs">{p.date||'—'}</td>
+                      <td className="py-2.5 pr-4 text-slate-500 text-xs">{p.date||'—'}</td>
+                      <td className="py-2.5 text-slate-500 text-xs max-w-xs truncate" title={p.notes||undefined}>{p.notes||'—'}</td>
                     </tr>
                   ))}
                 </tbody>
