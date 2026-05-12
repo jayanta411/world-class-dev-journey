@@ -1,5 +1,7 @@
 # 🧮 DSA Problem Tracker
 
+> **Note:** The authoritative problem list is now in [`notes/dsa.json`](./dsa.json) (150 NeetCode problems). This markdown file is kept for reference only.
+
 ## Pattern Progression
 | Weeks | Pattern | Target |
 |-------|---------|--------|

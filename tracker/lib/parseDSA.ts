@@ -1,16 +1,40 @@
 export interface DSAProblem {
   number: number; problem: string; link: string; ncLink: string;
   pattern: string; difficulty: 'Easy'|'Medium'|'Hard'|''; date: string; notes: string;
+  roadmapWeek?: number;
 }
 export interface DSAStats {
   problems: DSAProblem[]; total: number; easy: number; medium: number; hard: number;
   byPattern: Record<string,number>; targetTotal: number; completionPercent: number;
 }
+export interface DSAJsonData {
+  meta: { title: string; target: number; updatedAt: string };
+  problems: Array<{
+    id: string; number: number; problem: string;
+    lcLink: string; ncLink: string; pattern: string;
+    difficulty: string; roadmapWeek: number;
+    completed: boolean; date: string; notes: string;
+  }>;
+}
 export const DSA_PATTERN_TARGETS: Record<string,number> = {
-  'Arrays':4,'Strings':4,'Hash Maps':4,'Two Pointers':6,'Sliding Window':6,
-  'Trees':5,'Recursion':4,'BFS/DFS':4,'Binary Search':5,'Heap':4,
-  'Linked Lists':4,'Stack':3,'Queue':3,'Backtracking':4,'Greedy':4,
-  'Dynamic Programming':18,'Graphs':10,'Tries':5,
+  'Arrays & Hashing': 9,
+  'Two Pointers': 5,
+  'Sliding Window': 6,
+  'Stack': 7,
+  'Binary Search': 7,
+  'Linked List': 11,
+  'Trees': 15,
+  'Tries': 3,
+  'Heap / Priority Queue': 7,
+  'Backtracking': 9,
+  'Graphs': 13,
+  'Advanced Graphs': 6,
+  '1D DP': 12,
+  '2D DP': 11,
+  'Greedy': 8,
+  'Intervals': 6,
+  'Math & Geometry': 8,
+  'Bit Manipulation': 7,
 };
 export const DSA_PATTERN_ORDER = Object.keys(DSA_PATTERN_TARGETS);
 
@@ -60,5 +84,37 @@ export function parseDSA(markdown: string): DSAStats {
   return {
     problems: valid, total: valid.length, easy, medium, hard, byPattern,
     targetTotal: 150, completionPercent: Math.round((valid.length/150)*100),
+  };
+}
+
+export function parseDSAJson(json: string): DSAStats {
+  const data: DSAJsonData = JSON.parse(json);
+  const byPattern: Record<string,number> = {};
+  let easy=0, medium=0, hard=0;
+  const problems: DSAProblem[] = data.problems
+    .filter(p => p.completed)
+    .map(p => {
+      const diff = p.difficulty as DSAProblem['difficulty'];
+      const difficulty: DSAProblem['difficulty'] = ['Easy','Medium','Hard'].includes(diff) ? diff : '';
+      byPattern[p.pattern] = (byPattern[p.pattern]||0)+1;
+      if (difficulty==='Easy') easy++;
+      else if (difficulty==='Medium') medium++;
+      else if (difficulty==='Hard') hard++;
+      return {
+        number: p.number,
+        problem: p.problem,
+        link: p.lcLink,
+        ncLink: p.ncLink,
+        pattern: p.pattern,
+        difficulty,
+        date: p.date,
+        notes: p.notes,
+        roadmapWeek: p.roadmapWeek,
+      };
+    });
+  const targetTotal = data.meta.target ?? 150;
+  return {
+    problems, total: problems.length, easy, medium, hard, byPattern,
+    targetTotal, completionPercent: Math.round((problems.length/targetTotal)*100),
   };
 }
